@@ -24,24 +24,21 @@ function Phrase(str) {
   }
 
   this.guessLetter = (l) => {
-    let letterFound = false;
     let found = false;
     let solvedWords = true;
     for (let i=0; i <this.phrase.length; i++) {
-      found = this.phrase[i].checkLetter(l) || found;
-      // if (found) {
-      //   letterFound = true;
-      // }
+      found = this.phrase[i].checkLetter(l) || found;   // if the letter is found anywhere in the phrase, found = true
       if (this.phrase[i].solved === false) {
         solvedWords = false;    // an unsolved word still exists
       }
     }
+
     this.solved = solvedWords;
-    if (!found) {
+    if (!found) {   // incorrect guess
       this.missed--;
       if (this.missed > 0) {
         console.log(`\n**** Incorrect! You have ${this.missed} guesses left ****`);
-      } else {
+      } else {      // correct guess
         this.lost = true;;
       }
     }

@@ -2,34 +2,36 @@ var Letter = require('./Letter.js');
 
 function Word(str) {
 
-  this.solved = true;
+  this.solved = false;
   this.word = [];
   for (let i=0; i<str.length; i++) {
     this.word.push(new Letter(str[i]));
   }
 
+  // Creates a string representing the word. If letters have been guessed, they
+  // are displayed, otherwise they are represented by an underscore.
   this.showWord = () => {
-    let guessedStr = '';
+    let wordStr = '';
     for (let i=0; i<this.word.length; i++) {
-      guessedStr += this.word[i];
+      wordStr += this.word[i];
     }
-    return guessedStr;
+    return wordStr;
   }
 
+  // checks all letters in the word to see if any equal the guessed letter (l)
+  // 'noDashes' is used to find if there are any remaining unknown letters in the word.
+  // 'found' returns true if any letter in the word matches the supplied letter. This
+  //     is used to know whether the user's guess is correct or incorrect.
   this.checkLetter = (l) => {
     let noDashes = true;
-    let letterInWord = false;
     let found =false;
     for (let i=0; i<this.word.length; i++) {
       found = this.word[i].guessChar(l) || found;
       if (this.word[i].guessed === false) {
         noDashes = false;  // a dash still exists
       } 
-      // if (found){
-      //   letterInWord = true;
-      // }
     }
-    this.solved = noDashes;
+    this.solved = noDashes; // word has been solved
     return found;
   }
 

@@ -3,7 +3,7 @@ var Phrase = require('./Phrase');
 
 const phraseBank = [
   "A stitch in time saves nine",
-  "a few fries short of a happy meal",
+  "one fry short of a happy meal",
   "life is like a box of chocolates",
 ];
 
@@ -11,6 +11,7 @@ let counter = 0;
 let randomPhrase = phraseBank[counter].toUpperCase();
 let puzzle = new Phrase(randomPhrase);
 
+// Main loop - asks user for letters.
 const loopPrompt = () => {
   
   inquirer.prompt([
@@ -40,6 +41,7 @@ const loopPrompt = () => {
   });
 }
 
+// After puzzle is solved or user loses, ask to play again
 const playAgain = () => {
   inquirer.prompt([
     {
@@ -64,8 +66,6 @@ const playAgain = () => {
     }
   })
 }
-
-
   
   console.log('Guess letters to discover the hidden phrase.');
   console.log('If you guess 10 incorrect letters, you lose.\n');
