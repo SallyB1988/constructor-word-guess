@@ -1,6 +1,6 @@
 # constructor-word-guess
 
-This is a terminal based version of hangman.  Clone this code, then run `npm install` in your terminal window.
+This is a terminal based version of hangman.  Clone this repository, then run `npm install` in your terminal window.
 To run the game, enter `node index.js` in the terminal window.
 
 There are three phrases for the user to guess.
