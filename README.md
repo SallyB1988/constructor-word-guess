@@ -1,7 +1,9 @@
 # constructor-word-guess
 
-This is a console based version of hangman. There are three phrases for the user to guess. To run the code, enter `node index.js` in the terminal window.
+This is a terminal based version of hangman.  Clone this code, then run `npm install` in your terminal window.
+To run the game, enter `node index.js` in the terminal window.
 
+There are three phrases for the user to guess.
 The hidden phrase is displayed as a series of dashes.
 Enter a letter.
 * If the letter is in the phrase, the dashes representing that letter are replaced with the letter and the user is prompted for a new letter.
