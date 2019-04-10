@@ -11,14 +11,15 @@ function Letter(letter) {
     }
   }
 
-  // If supplied letter matches this object letter, set guessed to be true.
-  this.guessChar = (c) => {
-    if (c.toUpperCase() === this.letter) {
-      this.guessed = true;
-      return true;
-    } else {
-      return false;
-    }
+}
+
+// If supplied letter matches this object letter, set guessed to be true.
+Letter.prototype.guessChar = function(c) {
+  if (c.toUpperCase() === this.letter) {
+    this.guessed = true;
+    return true;
+  } else {
+    return false;
   }
 }
 

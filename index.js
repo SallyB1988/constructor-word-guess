@@ -68,7 +68,7 @@ const playAgain = () => {
 
   
   console.log('Guess letters to discover the hidden phrase.');
-  console.log('If you guess 10 incorrect letters, you lose.\n\n');
+  console.log('If you guess 10 incorrect letters, you lose.\n');
   puzzle.showPhrase();
   loopPrompt();
 

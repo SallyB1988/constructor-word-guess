@@ -18,9 +18,9 @@ function Phrase(str) {
     let buildPhrase = '';
 
     for (let i=0; i<this.phrase.length; i++) {
-      buildPhrase += this.phrase[i].showWord() + ' ';
+      buildPhrase += this.phrase[i].showWord() + '  ';
     }
-    console.log(buildPhrase.trim());
+    console.log(`\n${buildPhrase.trim()}\n`);
   }
 
   this.guessLetter = (l) => {
